@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset='utf-8'/>
+	<script src='jquery-1.8.3.min.js'></script>
+	<script src='jquery.elevatezoom.js'></script>
+<title>Untitled Document</title>
+
+<script type ="text/javascript">
+var width ="448";
+var height ="297";
+
+function zoomIn()
+{
+	width = parseInt(width)+20;
+	height = parseInt(height)+20;
+	document.getElementById("pic").width = width;
+	document.getElementById("pic").height = height;
+}
+
+function zoomOut()
+{
+	width = parseInt(width)-20;
+	height = parseInt(height)-20;
+	document.getElementById("pic").width = width;
+	document.getElementById("pic").height = height;
+}
+
+function original()
+{
+//447*467
+document.getElementById("pic").width="448";
+document.getElementById("pic").height = "297";
+}
+</script>
+</head>
+<body>
+
+<b>
+<?php
+
+$imagesrc1=htmlspecialchars($_GET["imagesrc"]);
+echo $_GET['imagesrc'];
+
+?>
+</b>
+<!-- <img id="pic" src=""/></br> -->
+<input type="button" value="Zoom In" onclick="zoomIn();"/>
+<input type="button" value="Zoom Out" onclick="zoomOut();"/>
+<input type="button" value="Original" onclick="original();"/>
+</body>
+</html>
